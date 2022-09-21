@@ -11,13 +11,34 @@ class App extends Component {
     ],
   };
 
+  changeTechnologyState = (newTechName) => {
+    this.setState({
+      technologyDetails: [
+        { technologyName: "MongDB", usedFor: "Firebase" },
+        { technologyName: newTechName, usedFor: "Frontend dev" },
+        { technologyName: "I am also Change", usedFor: "Change Okay" },
+      ],
+    });
+  };
   render() {
     // let obj = new Component();
     // console.log(obj);
-
+    console.log(this.state);
     return (
       <div className="App">
         <h1>Book list</h1>
+        <button
+          onClick={() =>
+            this.changeTechnologyState("I am change From React JS - Next JS")
+          }
+        >
+          Change State
+        </button>
+
+
+
+
+
         <Technology
           technologyName={this.state.technologyDetails[0].technologyName}
           usedFor={this.state.technologyDetails[0].usedFor}
@@ -29,6 +50,10 @@ class App extends Component {
         <Technology
           technologyName={this.state.technologyDetails[2].technologyName}
           usedFor={this.state.technologyDetails[2].usedFor}
+          change={this.changeTechnologyState.bind(
+            this,
+            "I am change 2 from also change by new change"
+          )}
         />
       </div>
     );

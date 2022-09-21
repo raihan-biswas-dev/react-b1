@@ -5,7 +5,7 @@ const Technology = (props) => {
   return (
     <>
       <div>
-        <h2>Technology: {props.technologyName} </h2>
+        <h2 onClick={props.change}>Technology: {props.technologyName} </h2>
         <h3>Used For: {props.usedFor} </h3>
       </div>
     </>
