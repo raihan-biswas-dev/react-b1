@@ -20,6 +20,17 @@ class App extends Component {
       ],
     });
   };
+
+  changeWithInut = (e) => {
+    this.setState({
+      technologyDetails: [
+        { technologyName: "MongDB", usedFor: "Firebase" },
+        { technologyName: e.target.value, usedFor: "Frontend dev" },
+        { technologyName: "I am also Change", usedFor: "Change Okay" },
+      ],
+    });
+  };
+
   render() {
     // let obj = new Component();
     // console.log(obj);
@@ -35,9 +46,7 @@ class App extends Component {
           Change State
         </button>
 
-
-
-
+        <input type="text" onChange={this.changeWithInut} />
 
         <Technology
           technologyName={this.state.technologyDetails[0].technologyName}
